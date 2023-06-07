@@ -45,13 +45,13 @@ pipeline{
                 sh """./${params.FILE_NAME}"""
             }
         }
-        stage('Sending an artifact to Sunny'){
+        stage('Sending an artifact to Proger'){
             steps{
 			    // Настройки плагина Publish Over SSH
                 sshPublisher(
                              publishers: [
                                  sshPublisherDesc(
-                                     configName: "Sunny",
+                                     configName: "Proger",
                                      transfers: [
                                         sshTransfer(sourceFiles: "${params.FILE_NAME}")
                                      ]
